@@ -14,6 +14,8 @@ const Home = () => {
     const dispatch = useDispatch()
 
     const handleSubmit = (data) => {
+        localStorage.setItem('bookmarkId', data._id)
+        window.alert("This quote is Bookmarked!!!")
         dispatch(addBookmarks({ content: data.content, author: data.author }))
     };
 
