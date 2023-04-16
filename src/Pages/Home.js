@@ -60,9 +60,9 @@ const Home = () => {
     return (
         <div className='min-h-screen  App  flex justify-center'>
             <div className=" flex-col mt-[143px] px-5">
-                <div className='md:w-[773px] w-full  h-[263px] bg-[#D05252] text-white rounded-[30px]  flex flex-col px-[120px] py-[23px]'>
-                    <h1 className='md:w-[521px] h-[163px] px-[6px] py-[3px]  flex  align-bottom justify-start '>
-                        {data ? data.content : "No Quote Found"}
+                <div className='md:w-[773px] w-full  h-[263px] bg-[#D05252] text-white rounded-[30px]  flex flex-col md:px-[120px] px-[25px] py-[23px]'>
+                    <h1 className={`md:w-[521px] w-full h-[163px] px-[6px] py-[3px]  flex  align-bottom ${data?'justify-start':'justify-center'}`}>
+                        {data ? data.content : <div className="custom-loader"></div>}
                     </h1>
                     <div className='w-full flex justify-evenly items-center leading-7 mt-[15px]'>
                         <p className='px-[6px] py-[3px] flex justify-center text-[18px] font-semibold'>

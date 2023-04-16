@@ -17,16 +17,16 @@ const Bookmark = () => {
         <div className='min-h-screen book-mark  App  flex justify-center'>
             <div className=" flex-col mt-[143px] px-5">
                 {bookmarks.length > 0 ? bookmarks.map((data, key) => (
-                    <div key={key} className='md:w-[773px] w-full my-16  h-[263px] bg-[#D05252] text-white rounded-[30px]  flex flex-col px-[120px] py-[23px]'>
-                        <h1 className='md:w-[521px] h-[163px] px-[6px] py-[3px]  flex  align-bottom justify-start '>
-                            {data.content}
+                    <div key={key} className='md:w-[773px] w-full  h-[263px] bg-[#D05252] text-white rounded-[30px]  flex flex-col md:px-[120px] px-[25px] py-[23px]'>
+                        <h1 className={`md:w-[521px] w-full h-[163px] px-[6px] py-[3px]  flex  align-bottom ${data ? 'justify-start' : 'justify-center'}`}>
+                            {data ? data.content : <div className="custom-loader"></div>}
                         </h1>
                         <div className='w-full flex justify-evenly items-center leading-7 mt-[15px]'>
                             <p className='px-[6px] py-[3px] flex justify-center text-[18px] font-semibold'>
-                                - {data.author}
+                                - {data && data.author}
                             </p>
                             <button onClick={() => handleSubmit(data)}>
-                                <img src={bookmark} alt='bookmark' className='flex justify-end w-[18px] h-[28px]' />
+                                <img src={bookmark} alt='bookmark' className='flex justify-end w-[20px] h-[20px]' />
                             </button>
                         </div>
                     </div>
